@@ -23,12 +23,11 @@ print('hello world')
 
 # リンク
 出力結果
-[https://naonaorange.hatenablog.com/](https://naonaorange.hatenablog.com/)
+https://naonaorange.hatenablog.com/
 markdown
 ```
-[https://naonaorange.hatenablog.com/](https://naonaorange.hatenablog.com/)
-
-[]()
+# URLをそのまま記載すればOKです
+https://naonaorange.hatenablog.com/
 ```
 
 # 画像
