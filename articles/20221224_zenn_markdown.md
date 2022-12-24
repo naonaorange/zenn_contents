@@ -3,7 +3,7 @@ title: "Zenn Markdown チートシート"
 emoji: "🐈"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [blog]
-published: false
+published: true
 ---
 
 ZennのMarkdownチートシートです。
