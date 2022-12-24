@@ -7,3 +7,4 @@ published: true
 ---
 
 初投稿です！
+![](/images/20221223_first_content/naonaorange.png)
