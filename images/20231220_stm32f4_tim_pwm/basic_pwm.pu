@@ -1,0 +1,47 @@
+@startuml
+
+<style>
+timingDiagram {
+  .red {
+    LineColor red
+    LineThickness 3
+  }
+}
+</style>
+
+
+caption time[ms]
+scale 1 as 200 pixel
+concise "Description" as desc
+analog "Triangle Wave" as tri_wave
+binary "PWM" as pwm <<red>>
+
+@desc
+    desc@0.7 -> desc@0.7 : CCR=699
+    desc@0.7 -> pwm@0.7
+    
+    desc@1 -> desc@1 : ARR=999
+    desc@1 -> pwm@1
+
+    desc@1.7 -> desc@1.7 : CCR=699
+    desc@1.7 -> pwm@1.7
+    
+    desc@2 -> desc@2 : ARR=999
+    desc@2 -> pwm@2
+
+@tri_wave
+    0 is 0
+    1 is 999
+    1.01 is 0
+    2 is 999
+    2.01 is 0
+
+@pwm
+    0 is high
+    0.7 is low
+    1 is high
+    1.7 is low : 
+
+
+
+@enduml

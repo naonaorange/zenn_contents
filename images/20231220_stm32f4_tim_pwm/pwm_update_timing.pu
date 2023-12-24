@@ -1,0 +1,78 @@
+@startuml
+
+<style>
+timingDiagram {
+  .red {
+    LineColor red
+    LineThickness 3
+  }
+}
+</style>
+
+
+caption time[ms]
+scale 1 as 200 pixel
+concise "Description" as desc
+analog "Up" as up_wave
+concise "Description" as desc2
+analog "Down" as down_wave
+concise "Description" as desc3
+analog "Center Aligned Mode 1" as center1_wave
+concise "Description" as desc4
+analog "Center Aligned Mode 2" as center2_wave
+concise "Description" as desc5
+analog "Center Aligned Mode 3" as center3_wave
+
+@desc
+    desc@0 -> desc@0 : UEV
+    desc@1 -> desc@1 : UEV
+    desc@2 -> desc@2 : UEV
+
+@desc2
+    
+    desc2@0 -> desc2@0 : UEV
+    desc2@1 -> desc2@1 : UEV
+
+    desc2@2 -> desc2@2 : UEV
+
+@desc3
+    desc3@0 -> desc3@0 : UEV
+    desc3@2 -> desc3@2 : UEV
+
+@desc4
+    desc4@1 -> desc4@1 : UEV
+    
+@desc5
+    desc5@1 -> desc5@1 : UEV
+    desc5@0 -> desc5@0 : UEV
+    desc5@2 -> desc5@2 : UEV
+
+@up_wave
+    0 is 0
+    1 is 999
+    1.01 is 0
+    2 is 999
+    2.01 is 0
+
+@down_wave
+    0 is 999
+    1 is 0
+    1.01 is 999
+    2 is 0
+    2.01 is 999
+
+@center1_wave
+    0 is 0
+    1 is 999
+    2 is 0
+
+@center2_wave
+    0 is 0
+    1 is 999
+    2 is 0
+
+@center3_wave
+    0 is 0
+    1 is 999
+    2 is 0
+@enduml

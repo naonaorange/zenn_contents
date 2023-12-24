@@ -1,0 +1,95 @@
+@startuml
+
+<style>
+timingDiagram {
+  .red {
+    LineColor red
+    LineThickness 3
+  }
+}
+</style>
+
+
+caption time[ms]
+scale 1 as 200 pixel
+concise "Description" as desc
+analog "Up" as up_wave
+binary "PWM (Up)" as pwm_up <<red>>
+concise "Description" as desc2
+analog "Down" as down_wave
+binary "PWM (Down)" as pwm_down <<red>>
+concise "Description" as desc3
+analog "Center Aligned Mode 1-3" as center_wave
+binary "PWM (Center)" as pwm_center <<red>>
+
+@desc
+    desc@0.7 -> desc@0.7 : CCR=699
+    desc@0.7 -> pwm_up@0.7
+    
+    desc@1 -> desc@1 : ARR=999
+    desc@1 -> pwm_up@1
+
+    desc@1.7 -> desc@1.7 : CCR=699
+    desc@1.7 -> pwm_up@1.7
+    
+    desc@2 -> desc@2 : ARR=999
+    desc@2 -> pwm_up@2
+
+@desc2
+    desc2@0.3 -> desc2@0.3 : CCR=699
+    desc2@0.3 -> pwm_down@0.3
+    
+    desc2@1 -> desc2@1 : ARR=999
+    desc2@1 -> pwm_down@1
+
+    desc2@1.3 -> desc2@1.3 : CCR=699
+    desc2@1.3 -> pwm_down@1.3
+    
+    desc2@2 -> desc2@2 : ARR=999
+    desc2@2 -> pwm_down@2
+
+@desc3
+    desc3@0.7 -> desc3@0.7 : CCR=699
+    desc3@0.7 -> pwm_center@0.7
+    
+    desc3@1.3 -> desc3@1.3 : CCR=699
+    desc3@1.3 -> pwm_center@1.3
+    
+@up_wave
+    0 is 0
+    1 is 999
+    1.01 is 0
+    2 is 999
+    2.01 is 0
+
+@down_wave
+    0 is 999
+    1 is 0
+    1.01 is 999
+    2 is 0
+    2.01 is 999
+
+@center_wave
+    0 is 0
+    1 is 999
+    2 is 0
+
+@pwm_up
+    0 is high
+    0.7 is low
+    1 is high
+    1.7 is low
+    
+@pwm_down
+    0 is low
+    0.3 is high
+    1 is low
+    1.3 is high
+
+@pwm_center
+    0 is high
+    0.7 is low
+    1.3 is high
+
+
+@enduml
